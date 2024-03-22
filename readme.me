@@ -1,0 +1,75 @@
+tupla -> oggetto immutabile, operazioni più veloci rispetto ad una lista, si usano le parentesi tonde.
+# es. t = (1,2,3)
+
+per eliminare una chiave, uso "del"
+
+un set-> assomigliano gl'insiemi in matematica, si usano le parentesi graffe. Sono ordinati, univoci e modificabili. (l'univocità nel senso che se, per esempio, ripeto due volte "mario", me ne riporterà solo 1)
+
+\n stampa in una nuova riga
+\t stampa una tabulazione (spazio usando tab)
+
+
+ .format si usa quando devo stampare una stringa con più variabili dentro, in questo caso voglio stampare il nome, cognome e l'età.
+
+ charset ascii -> praticamente come il pc codifica le varie lettere,numeri ecc che noi digitiamo da alto livello(a,b,c, tutto quello che scriviamo) al basso livello(codice macchina)
+
+Un file può essere aperto in python con una chiamata "open()". Accetta svariati parametri, ma i più importanti sono:
+    • Il percorso del file da aprire ( se relativo, è il path a partire dallo script attualmente in esecuzione)
+    • La modalità di apertura
+  La modalità di apertura può essere: 
+    • r: modalità di sola lettura (default)
+    • w: modalità di scrittura
+    • x: modalità solo creazione scrittura(se il file  esiste fallisce)
+    • a: modalità solo scrittura in coda(append)
+    • +: modalità update (lettura e scrittura)
+    • b: modalità binaria(da combinare con le precedenti)
+    • t: modalità testuale(da combinare con le precedenti)
+
+Bisogna usare il context manager(praticamente si mette with/as prima e dopo di open, ad esempio: with open("percorsoFile", mode="modalitàDiApertura") as file: )
+
+Un file ha una posizione di lettura/scrittura assciata, che è possibile leggere e settare rispettivamente coi metodi /*tell e /*seek(offset,whence). Il parametro "whence" rappresenta il punto di partenza da cui iniziare lo spostamento precisato da "offset":
+
+  • 0: sposta il puntatore "offset" byte all'inizio del file.
+  • 1: sposta il puntatore "offset" byte all'inizio della posizione corrente.
+  • 2: sposta il puntatore "offset" byte dalla posizione corrente.
+
+Nel file di testo (cioè aperti senza la "b" nella modalità di apertura) sono permessi solo i seek relativi all'inizio del file.
+
+# MUTABILITY
+id() è una funzione built-in di Python. Ci da la possibilità di controllare l'identificatore univoco di un oggetto. In CPython, esso coincide con l'indirizzo di memoria RAM in cui si trova l'oggetto. Ricordiamo che in Python TUTTO E' UN OGGETTO, visto che a basso livello tutto punta ad una struttura dati complessa.
+
+#NUMERI STRINGHE E TUPLE SONO IMMUTABILI
+
+#LISTE, DIZIONARI E SET SONO MUTABILITY
+
+L'immutabilità può essere usata per assicurarsi che un oggetto rimanga "costante" durante l'esecuzione di un programma. I valori degli oggetti mutabili, possono invece essere cambiati "inline" in ogni momento
+
+l'immutabilità per una tupla è in parte vera, perchè in alcuni casi è possibili modificare GLI OGGETTI IN ESSA CONTENUTI. Se la tupla ha un campo immutabile come una stringa, allora la tupla non può essere modificata ed è talvolta chiamata "immutabilità non transitiva". Ma un campo mutabile come un elenco può essere modificato.
+
+Interning -> è il processo di ottimizzazione della memoria
+
+La LIST COMPREHENSION è un modo elegante e sintetico per creare delle liste partendo da altre liste o da oggetti "iterable" ( cioè oggetti che possono essere usati in un ciclo "for", come tuple e stringhe).
+Dal punto di vista sintattico, la forma delle list comprehension è la seguente: 
+output = [expression for item in iterable(if conditional)]
+Questa riga significa che aggiungiamo alla lista "outpu" il risultato dell'espressione "expression" eseguita su ogni "item" che fa parte di iterable. Opzionalmente possiamo aggungere una o più condizioni per ESCLUDERE un elemento dell'iterable di partenza da quello di arrivo
+
+#MATRICE# di base è una lista di liste
+
+Per pushare qualcosa all'interno di un file json, usiamo -> dump o dumps. Quindi sarà => json.dump o json.dumps. Bisogna sempre caricare il file prima {con "open with" visto in precedenza}
+Invece se volessimo caricare un file json nella nostra macchina, quindi per importarlo, dovremmo usare => json.load
+
+Nel file json, per dare uno "spazio" all'inizio della riga usiamo -> indent = 4 (il 4 è un esempio)
+Mentre per ordinarle in modalità "codice" usiamo => sort_keys = True
+
+Pickle si usa per ML e serializza anche dati complessi, quello che json non può fare.
+json si usa lato web e internet, mentre pickle si usa più per ml e non è crossplatform, non è leggibile dagli esseri umani(a meno che non ti studi come ragiona lui, follia) ed oltretutto è anche più veloce e nativo python
+
+Un oggetto è una particolare istanza di quella porzione di realtà di cui abbiamo definito i tratti e i caratteri all'interno di una classe = Immaginiamo di essere dei pasticceri e di dover confezionare dei dolci per pasqua. Quali sono le caratteristiche che contraddistinguono un uovo di pasqua? sorpresa, dimensione ecc però ci sono dei tratti che sono in comune con gli altri, ad esempio fatto di cioccolato, la forma, ecc. Con una classe costruisco qualcosa che abbia dei metodi e degli attributi
+
+Per definire una classe in python si usa ""class""
+
+Dunder Methods -> duble underscore vengono messi prima e dopo (es. __init__)
+
+
+L'incapsulamento è di base la capacità delle classi di nascondere i dati dall'esterno, facendo in modo che ci si possa accedere solo dall'interno.
+Python ha una sua peculiarità per quanto riguarda detto prima.
